@@ -71,6 +71,19 @@
                         title: '分类名称/订阅源名称'
                     },
                     {
+                        field: 'icon',
+                        title: '封面',
+                        width: '100',
+                        formatter: function(value, row, index) {
+                            if(value){
+                                return "<img style='width:50px;' src='"+ value +"'>";
+                            }else{
+                                return "暂未设置"
+                            }
+
+                        }
+                    },
+                    {
                         field: 'showCount',
                         title: '显示条数'
                     },
