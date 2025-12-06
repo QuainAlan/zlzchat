@@ -5,6 +5,12 @@
 部署文档：http://103.40.14.228:38603/
 ```
 
+有什么好的意见可以到github上发留言。下次版本更新时会更新一些好的idea，留言格式 标题为 需求留言：具体需求内容
+
+## 群聊码（过期留言）
+<img src="https://github.com/user-attachments/assets/654d49ab-7f07-4862-afe3-3b80a3e15dcb" align="left" width=400 />
+
+
 ## 系统展示图
 
 ![logo](./images/1.png)
