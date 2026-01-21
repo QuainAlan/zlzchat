@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="admin/include :: header('更新记录表单')" />
+    <th:block th:include="admin/include :: select2-css" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-updateLog" th:object="${entity}">
+            <input name="logId" th:field="*{logId}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">状态 1执行中 2执行结束：</label>
+                <div class="col-sm-8">
+                    <input name="logSta" th:field="*{logSta}" class="form-control" type="text" maxlength="2">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">执行结果 1正常 2异常：</label>
+                <div class="col-sm-8">
+                    <input name="logResultSta" th:field="*{logResultSta}" class="form-control" type="text" maxlength="2">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">执行类型 1定时任务 2最新同步更新 3历史更新：</label>
+                <div class="col-sm-8">
+                    <input name="logCatagory" th:field="*{logCatagory}" class="form-control" type="text" maxlength="2">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">更新成功条数：</label>
+                <div class="col-sm-8">
+                    <input name="updateNum" th:field="*{updateNum}" class="form-control" type="text" digits="true">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">历史更新开始页数：</label>
+                <div class="col-sm-8">
+                    <input name="historyStartNum" th:field="*{historyStartNum}" class="form-control" type="text" maxlength="10">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">历史更新结束页数：</label>
+                <div class="col-sm-8">
+                    <input name="historyEndNum" th:field="*{historyEndNum}" class="form-control" type="text" maxlength="10">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">异常原因：</label>
+                <div class="col-sm-8">
+                    <textarea name="remark" class="form-control" maxlength="500">[[*{remark}]]</textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="admin/include :: footer" />
+    <th:block th:include="admin/include :: select2-js" />
+    <script th:inline="javascript">
+        var action = [[${entity.logId} ? |/edit| : |/add|]];
+        var prefix = ctx + "cms/updateLog";
+        // 表单验证初始化
+        $("#form-updateLog").validate({
+            focusCleanup: true
+        });
+        // 提交保存
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + action, $('#form-updateLog').serialize());
+            }
+        }
+    </script>
+</body>
+</html>
