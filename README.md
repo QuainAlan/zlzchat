@@ -7,7 +7,7 @@
 有什么好的意见可以到github上发留言。下次版本更新时会更新一些好的idea，留言格式 标题为 需求留言：具体需求内容
 
 ## 群聊码（过期留言）
-<img src="https://github.com/user-attachments/assets/f8e31f05-e6b9-4bfe-9333-f40eafb7be95" align="left" width=400 />
+<img src="https://github.com/user-attachments/assets/b4a24c88-e37b-4b62-87f6-eeb5063d8d94" align="left" width=400 />
 
 
 <br/>
